@@ -29,7 +29,7 @@
 
 <button class="btn btn-primary" 
 [disabled] = "username == ''" 
-(click)="username = ''">Reset</button>-->
+(click)="username = ''">Reset</button>
 
 <button class="btn btn-primary" (click)="onCreateServer()">Add Server</button>
 
@@ -39,5 +39,17 @@
     <p>No server was created!</p>
 </ng-template>
 
+<app-server *ngFor="let server of servers"></app-server>
 <app-server></app-server>
-<app-server></app-server>
+-->
+<button class="btn btn-primary" (click)="toggleP();">Display Details</button>
+
+<p *ngIf="showIt">
+    teste
+</p>
+<div *ngFor="let h of hiddenArray; let ind = index"
+    [ngStyle]="{backgroundColor: ind >= 4 ? 'blue' : white}"
+    [ngClass]="{'white-text': ind >= 4 }"
+>
+    {{h}}
+</div>    

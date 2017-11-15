@@ -12,6 +12,10 @@ export class ServersComponent implements OnInit {
   serverName = 'Begin';
   allowReset = false;
   serverCreated = false;
+  servers = ['Test Server', 'Teste Server 2'];
+  showIt = false;
+  hiddenArray = [];
+  count = 0;
 
   username = '';
 
@@ -28,6 +32,7 @@ export class ServersComponent implements OnInit {
     console.log('teste');
     this.serverCreated = true;
     this.serverCreationStatus = "Server was created. Name is " + this.serverName;
+    this.servers.push(this.serverName);
   }
 
   onUpdateServerName(event:any) {
@@ -46,5 +51,13 @@ export class ServersComponent implements OnInit {
   onResetUsername(){
     this.username = '';
     this.allowReset = false;
+  }
+
+  toggleP(){
+    //console.log('teste');
+    this.showIt = !this.showIt;
+    //this.hiddenArray.push(this.count++);
+    this.hiddenArray.push(new Date());
+    //console.log(this.hiddenArray);
   }
 }
